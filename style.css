@@ -1,0 +1,135 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* COLORS */
+  --white: 255, 255, 255;
+  --black: 0, 0, 0;
+
+  /* Greys */
+  --grey500: 98, 108, 127;
+  --grey50: 244, 246, 250;
+
+  /* Blues */
+  --blue950: 45, 57, 73;
+  --blue900: 49, 62, 81;
+  --blue850: 59, 77, 102;
+  --blue500: 48, 106, 255;
+  --blue300: 171, 193, 225;
+  --blue100: 237, 241, 249;
+  --blue50: 235, 240, 255;
+
+  /* Greens */
+  --green500: 47, 216, 135;
+  --green100: 224, 253, 239;
+
+  /* Purples */
+  --purple600: 167, 41, 245;
+  --purple100: 246, 231, 255;
+
+  /* Oranges */
+  --orange400: 255, 126, 53;
+  --orange50: 255, 245, 237;
+
+  /* Reds */
+  --red50: 238, 84, 84;
+
+  /* Fonts */
+  --rubik: "Rubik";
+
+  /*Utilities */
+  --24px-border-radius: 24px;
+}
+
+/* Text Presets */
+
+.text-preset-1 {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 144px;
+}
+
+.text-preset-1-mobile {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 88px;
+}
+
+.text-preset-2-medium {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 64px;
+}
+
+.text-preset-2-light {
+  font-family: var(--rubik);
+  font-weight: lighter;
+  font-size: 64px;
+}
+
+.text-preset-2-mobile-medium {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 40px;
+}
+
+.text-preset-2-mobile-light {
+  font-family: var(--rubik);
+  font-weight: lighter;
+  font-size: 40px;
+}
+
+.text-preset-3 {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 36px;
+}
+
+.text-preset-3-mobile {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 20px;
+}
+
+.text-preset-4 {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 28px;
+}
+
+.text-preset-4-mobile {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 18px;
+}
+
+.text-preset-5-medium {
+  font-family: var(--rubik);
+  font-weight: medium;
+  font-size: 24px;
+}
+
+.text-preset-5-regular {
+  font-family: var(--rubik);
+  font-weight: normal;
+  font-size: 24px;
+}
+
+.text-preset-5-mobile-italic {
+  font-family: var(--rubik);
+  font-weight: normal;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.text-preset-6 {
+  font-family: var(--rubik);
+  font-weight: normal;
+  font-style: italic;
+  font-size: 20px;
+}
