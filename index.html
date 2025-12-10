@@ -19,6 +19,63 @@
     <title>Frontend Quiz</title>
   </head>
   <body>
+    <div class="card-container">
+      <div class="card">
+        <div class="left-card">
+          <div class="left-info">
+            <div id="main-state">
+              <p class="text-preset-2-light" id="main-heading">
+                Welcome to the
+                <span id="text-preset-2-medium">Frontend Quiz!</span>
+              </p>
+              <small class="text-preset-6" id="main-small"
+                >Pick a subject to get started</small
+              >
+            </div>
+
+            <div id="quiz-state" class="hidden">
+              <div class="quiz-state-flex">
+                <small id="quiz-state-question-number">💩</small>
+                <h2 id="quiz-current-question">💩</h2>
+              </div>
+              <div class="quiz-state-range">
+                <input
+                  type="range"
+                  id="quiz-range"
+                  name="quiz-range"
+                  min="0"
+                  max="10"
+                  value="0"
+                  step="1"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right-card">
+          <div class="right-info">
+            <ul>
+              <li class="text-preset-4" id="html">
+                <img src="/assets/images/icon-html.svg" alt="" />
+                <p>HTML</p>
+              </li>
+              <li class="text-preset-4" id="css">
+                <img src="/assets/images/icon-css.svg" alt="" />
+                <p>CSS</p>
+              </li>
+              <li class="text-preset-4" id="js">
+                <img src="/assets/images/icon-js.svg" alt="" />
+                <p>Javascript</p>
+              </li>
+              <li class="text-preset-4" id="accessibility">
+                <img src="/assets/images/icon-accessibility.svg" alt="" />
+                <p>Accessibility</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

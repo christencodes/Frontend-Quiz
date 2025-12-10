@@ -10,6 +10,11 @@ a. review how to access JSOn file
 question: make it state based?
 */
 
+// SELECTORS
+
+// EVENT LISTENERS
+
+// OBJECTS
 const currentState = {
   state: "",
   main: true,
@@ -30,7 +35,7 @@ const categoryState = {
 };
 
 const quizTracker = {
-  currentState: "",
+  state: "",
   stateIcon: "",
   totalQuestions: 0,
   currentScore: 0,
