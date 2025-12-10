@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 OPR/124.0.0.0" version="29.2.5">
+  <diagram name="Page-1" id="5VlrUPeGfTCHkpC-txqN">
+    <mxGraphModel dx="495" dy="785" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KXDdugxc8OACl181lvq3-14" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-58" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-57" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Welcome to Frontend Quiz!&lt;div&gt;User Chooses Categroy&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="140" x="78.6" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-16" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-13" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Category" vertex="1">
+          <mxGeometry height="90" width="90" x="103.6" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-41" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-15" parent="1" style="whiteSpace=wrap;html=1;" value="Questions Based on Category" vertex="1">
+          <mxGeometry height="150" width="157.5" x="69.85" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-28" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-27" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-34" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-33" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-26" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" value="Correct Answer?" vertex="1">
+          <mxGeometry height="105" width="105" x="96.1" y="518" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-42" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-27" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="YES" vertex="1">
+          <mxGeometry height="80" width="80" x="108.60000000000002" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-45" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-29" parent="1" style="whiteSpace=wrap;html=1;" value="Log as INCORRECT&lt;div&gt;highlight the wrong answer in RED&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="140" x="450" y="525.5" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-43" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-33" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="NO" vertex="1">
+          <mxGeometry height="80" width="80" x="275" y="530.5" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-44" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-35" parent="1" style="whiteSpace=wrap;html=1;" value="Log as CORRECT highlight the correct answer in Green" vertex="1">
+          <mxGeometry height="120" width="150" x="240.00000000000003" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-47" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-46" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-53" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-52" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-37" parent="1" style="whiteSpace=wrap;html=1;" value="Are there more questions?" vertex="1">
+          <mxGeometry height="110" width="180" x="430" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-49" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-48" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-46" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Yes" vertex="1">
+          <mxGeometry height="80" width="80" x="740" y="735" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-56" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="KXDdugxc8OACl181lvq3-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-48" parent="1" style="whiteSpace=wrap;html=1;" value="Next Question" vertex="1">
+          <mxGeometry height="60" width="120" x="720" y="905" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-55" edge="1" parent="1" source="KXDdugxc8OACl181lvq3-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="KXDdugxc8OACl181lvq3-54" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-52" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="NO" vertex="1">
+          <mxGeometry height="75" width="80" x="480" y="895" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-54" parent="1" style="whiteSpace=wrap;html=1;" value="GIVE SCORE" vertex="1">
+          <mxGeometry height="60" width="120" x="460" y="1000" as="geometry" />
+        </mxCell>
+        <mxCell id="KXDdugxc8OACl181lvq3-57" parent="1" style="ellipse;whiteSpace=wrap;html=1;rounded=1;" value="TOGGLE DARK MODE" vertex="1">
+          <mxGeometry height="80" width="80" x="328.6" y="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
