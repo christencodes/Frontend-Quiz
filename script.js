@@ -11,27 +11,54 @@ question: make it state based?
 */
 
 // SELECTORS
+const rightCard = document.querySelector(".right-card");
 
 // EVENT LISTENERS
+rightCard.addEventListener("click", (e) => {
+  e.preventDefault();
+  //if we click and it's a certain id
+
+  categoryState.state(e.target.id);
+  //? change the current state to
+});
+
+// FUNCTIONS
+//function to get JSON data
+
+async function getQuizData() {
+  const requestURL = "data.json";
+  const request = new Request(requestURL);
+
+  const response = await fetch(request);
+  const dataText = await response.text();
+
+  const data = JSON.parse(dataText);
+  console.log(data);
+}
+
+getQuizData();
 
 // OBJECTS
-const currentState = {
-  state: "",
-  main: true,
-  // Change data on left and right panel
-  // Based on JSON
-  quiz: false,
-  // We gather curent score data
-  score: false,
-};
-
 const categoryState = {
-  //function that loops through states and gives state the key that's true
-  state: "",
+  state: function (id) {
+    for (const state in this) {
+      if (state == id) {
+        this[state] = true;
+      } else if (state == "state") {
+        continue;
+      } else {
+        this[state] = false;
+      }
+    }
+    //this.[id] -> true - change the others to false
+    //I want this to loop through the values and determine which one is true and make the others false
+  },
+  main: false,
   html: false,
   css: false,
   js: false,
   accessibility: false,
+  score: false,
 };
 
 const quizTracker = {
