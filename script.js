@@ -9,7 +9,7 @@ a. review how to access JSOn file
 
 question: make it state based?
 */
-
+// let jsonContainer;
 // SELECTORS
 const rightCard = document.querySelector(".right-card");
 
@@ -25,18 +25,27 @@ rightCard.addEventListener("click", (e) => {
 // FUNCTIONS
 //function to get JSON data
 
-async function getQuizData() {
-  const requestURL = "data.json";
-  const request = new Request(requestURL);
+// async function getQuizData() {
+//   const requestURL = "data.json";
+//   const request = new Request(requestURL);
 
-  const response = await fetch(request);
-  const dataText = await response.text();
+//   const response = await fetch(request);
+//   const dataText = await response.text();
 
-  const data = JSON.parse(dataText);
-  console.log(data);
-}
+//   const data = JSON.parse(dataText);
+//   return data;
+// }
 
-getQuizData();
+// getQuizData().then((result) => {
+//   jsonContainer = result;
+// });
+
+let jsonContainer;
+fetch("data.json")
+  .then((result) => result.text())
+  .then((result) => {
+    jsonContainer = JSON.parse(result);
+  });
 
 // OBJECTS
 const categoryState = {
