@@ -22,7 +22,18 @@
     <div class="card-container">
       <div class="card">
         <div class="left-card">
-          <div class="left-info">
+          <div class="left-quiz">
+            <div class="quiz-question">
+              <small>Question 0 of 0</small>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+                neque quasi velit. Autem non, tenetur harum, cupiditate dicta,
+                numquam accusamus cum sit facilis totam voluptates veritatis
+                voluptatem consequatur explicabo natus!
+              </p>
+            </div>
+          </div>
+          <div class="left-info hidden">
             <div id="main-state">
               <p class="text-preset-2-light" id="main-heading">
                 Welcome to the
@@ -32,28 +43,21 @@
                 >Pick a subject to get started</small
               >
             </div>
-
-            <div id="quiz-state" class="hidden">
-              <div class="quiz-state-flex">
-                <small id="quiz-state-question-number">💩</small>
-                <h2 id="quiz-current-question">💩</h2>
-              </div>
-              <div class="quiz-state-range">
-                <input
-                  type="range"
-                  id="quiz-range"
-                  name="quiz-range"
-                  min="0"
-                  max="10"
-                  value="0"
-                  step="1"
-                />
-              </div>
-            </div>
           </div>
         </div>
+
         <div class="right-card">
-          <div class="right-info">
+          <div class="right-quiz">
+            <ul id="questions">
+              <li id="0"><div class="A">A</div></li>
+              <li id="1"><div class="B">B</div></li>
+              <li id="2"><div class="C">C</div></li>
+              <li id="3"><div class="D">D</div></li>
+              <button class="submit">submit</button>
+            </ul>
+            <!-- <button id="submit">Submit</button> -->
+          </div>
+          <div class="right-info hidden">
             <ul>
               <li class="text-preset-4" id="html">
                 <img src="/assets/images/icon-html.svg" alt="" />

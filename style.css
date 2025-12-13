@@ -193,6 +193,7 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
+  height: fit-content;
 }
 
 .left-card,
@@ -202,9 +203,14 @@ body {
   flex-direction: column;
   align-content: center;
   justify-content: start;
+  border: 1px solid red;
 }
 
 .left-card {
+}
+
+.left-quiz {
+  border: 1px solid white;
 }
 
 .left-card small {
@@ -220,13 +226,15 @@ body {
   padding-right: 2rem;
 }
 
-.right-card ul {
+.right-card ul,
+.right-quiz ul {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
 }
 
-.right-card li {
+.right-card li,
+.right-quiz li {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -240,6 +248,10 @@ body {
   transition: outline 0.2s ease-in;
 }
 
+.right-quiz li {
+  padding: 1rem;
+}
+
 .right-card li:hover {
   cursor: pointer;
   outline: 3px solid var(--purple600);
@@ -250,6 +262,30 @@ body {
   height: auto;
   border-radius: 12px;
   padding: 0.1rem;
+}
+
+.A,
+.B,
+.C,
+.D {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  color: var(--blue950);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.submit {
+  margin-top: 10px;
+  height: 60px;
+  background-color: var(--purple600);
+  color: white;
+  border-radius: 24px;
+  outline: none;
+  border: none;
 }
 
 #html img {
