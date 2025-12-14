@@ -17,6 +17,11 @@ const rightCard = document.querySelector(".right-card");
 const leftInfo = leftCard.querySelector(".left-info");
 const rightInfo = rightCard.querySelector(".right-info");
 
+const leftQuiz = leftCard.querySelector(".left-quiz");
+const rightQuiz = rightCard.querySelector(".right-quiz");
+
+const quizQuestion = document.getElementById("quiz-question");
+
 //A B C D...0, 1 , 2 , 3
 
 const question0 = document.getElementById("0");
@@ -26,14 +31,25 @@ const question3 = document.getElementById("3");
 
 const questionsArray = [question0, question1, question2, question3];
 
-// EVENT LISTENERS
+// EVENT LISTENERS FOR CLICKING BUTTONS
+// For selecting which quiz
 rightCard.addEventListener("click", (e) => {
   e.preventDefault();
   //if we click and it's a certain id
+  if (categoryState.currentActiveState() == "main") {
+    categoryState.state(e.target.id);
+    quizTracker.clearMain();
+    quizTracker.showQuizInfo();
+  }
 
-  categoryState.state(e.target.id);
-  quizTracker.clearMain();
   //? change the current state to
+});
+
+//For selecting which answer
+rightQuiz.addEventListener("click", (e) => {
+  e.preventDefault();
+  quizTracker.currentUserAnswer = e.target.id;
+  console.log(e.target.id);
 });
 
 // FUNCTIONS
@@ -66,7 +82,13 @@ const categoryState = {
     for (const state in this) {
       if (state == id) {
         this[state] = true;
-      } else if (state == "state" || state == "currentActiveState") {
+      } else if (
+        state == "state" ||
+        state == "currentActiveState" ||
+        state == "returnStateIndex" ||
+        state == "stateIndex" ||
+        state == "populateAnswers"
+      ) {
         continue;
       } else {
         this[state] = false;
@@ -80,49 +102,62 @@ const categoryState = {
       }
     }
   },
-  main: false,
+
+  returnStateIndex: function () {
+    return this.stateIndex.indexOf(this.currentActiveState());
+  },
+  main: true,
   html: false,
   css: false,
   js: false,
   accessibility: false,
   score: false,
+  stateIndex: ["html", "css", "js", "accessibility", "main", "score"],
 };
 
 const quizTracker = {
-  state: () => categoryState.currentActiveState(),
   stateIcon: "",
   totalQuestions: 0,
   currentScore: 0,
   currentQuestion: 0,
-  //display current question
-  //display current answers
-  currentQuestionAnswer: "",
-  currentUserAnswer: "",
+  // THIS IS WHERE WE LEFT OFF!
+  currentQuestionAnswer: function () {
+    return jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
+      this.currentQuestion
+    ].answer;
+  },
+  currentUserAnswer: 0,
   answerSubmitted: false,
-  currentQuestions: "",
 
   clearMain: function () {
     leftInfo.classList.add("hidden");
     rightInfo.classList.add("hidden");
   },
 
-  populateQuestions: function () {
-    jsonContainer.quizzes.array.forEach((element) => {
-      if (jsonContainer.quizzes[element].title == this.state()) {
-        for (
-          let question = 0;
-          question <
-          jsonContainer.quizzes[element].questions[this.currentQuestion].options
-            .length;
-          question++
-        ) {
-          questionsArray[question].textContent =
-            jsonContainer.quizzes[element].questions[
-              this.currentQuestion
-            ].options[question];
-        }
-      }
+  showQuizInfo: function () {
+    leftQuiz.classList.remove("hidden");
+    rightQuiz.classList.remove("hidden");
+    this.populateQuestion();
+    this.populateOptions();
+  },
+
+  populateQuestion: function () {
+    quizQuestion.textContent =
+      jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
+        this.currentQuestion
+      ].question;
+  },
+
+  populateOptions: function () {
+    const options =
+      jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
+        this.currentQuestion
+      ].options;
+
+    console.log(options);
+
+    options.forEach((element) => {
+      questionsArray[options.indexOf(element)].textContent += ` ${element}`;
     });
   },
-  // keep track of everything populate the left and right side
 };
