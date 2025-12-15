@@ -22,6 +22,8 @@ const rightQuiz = rightCard.querySelector(".right-quiz");
 
 const quizQuestion = document.getElementById("quiz-question");
 
+const submitButton = document.querySelector(".submit");
+
 //A B C D...0, 1 , 2 , 3
 
 const question0 = document.getElementById("0");
@@ -48,11 +50,20 @@ rightCard.addEventListener("click", (e) => {
 //For selecting which answer
 rightQuiz.addEventListener("click", (e) => {
   e.preventDefault();
-  quizTracker.currentUserAnswer = e.target.id;
-  console.log(e.target.id);
+  quizTracker.currentUserAnswer = e.target.textContent;
+  console.log(e.target.textContent);
 });
 
 // FUNCTIONS
+//Submit button Function
+const addSubmitButtonListener = () => {
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    //HERE
+    quizTracker.checkAnswer();
+  });
+};
+
 //function to get JSON data
 
 async function getQuizData() {
@@ -116,18 +127,20 @@ const categoryState = {
 };
 
 const quizTracker = {
+  score: 0,
   stateIcon: "",
   totalQuestions: 0,
   currentScore: 0,
   currentQuestion: 0,
+  currentOptions: [],
   // THIS IS WHERE WE LEFT OFF!
   currentQuestionAnswer: function () {
     return jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
       this.currentQuestion
     ].answer;
   },
+  //this is a string? change it to int
   currentUserAnswer: 0,
-  answerSubmitted: false,
 
   clearMain: function () {
     leftInfo.classList.add("hidden");
@@ -139,6 +152,7 @@ const quizTracker = {
     rightQuiz.classList.remove("hidden");
     this.populateQuestion();
     this.populateOptions();
+    addSubmitButtonListener();
   },
 
   populateQuestion: function () {
@@ -149,15 +163,38 @@ const quizTracker = {
   },
 
   populateOptions: function () {
-    const options =
+    this.currentOptions =
       jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
         this.currentQuestion
       ].options;
 
-    console.log(options);
+    console.log(this.currentOptions);
 
-    options.forEach((element) => {
-      questionsArray[options.indexOf(element)].textContent += ` ${element}`;
+    this.currentOptions.forEach((element) => {
+      questionsArray[this.currentOptions.indexOf(element)].textContent =
+        element;
+      console.log(element);
     });
+  },
+
+  checkAnswer: function () {
+    this.increaseOrDecreaseScore(
+      this.currentUserAnswer.trim() == this.currentQuestionAnswer()
+    );
+
+    this.nextQuestion();
+  },
+
+  increaseOrDecreaseScore: function (trueOrFalse) {
+    trueOrFalse ? this.score++ : (this.score += 0);
+    console.log(trueOrFalse ? "the answer is correct" : "the answer is wrong");
+    console.log(`Current Score: ${this.score}`);
+  },
+
+  //WE STOPPED HERE!
+  nextQuestion: function () {
+    this.currentQuestion += 1;
+    this.populateQuestion();
+    this.populateOptions();
   },
 };
