@@ -24,6 +24,8 @@ const quizQuestion = document.getElementById("quiz-question");
 
 const submitButton = document.querySelector(".submit");
 
+const quizQuestionNumber = document.getElementById("quiz-question-number");
+
 //A B C D...0, 1 , 2 , 3
 
 const question0 = document.getElementById("0");
@@ -147,6 +149,11 @@ const quizTracker = {
     rightInfo.classList.add("hidden");
   },
 
+  showMain: function () {
+    leftInfo.classList.remove("hidden");
+    rightInfo.classList.remove("hidden");
+  },
+
   showQuizInfo: function () {
     leftQuiz.classList.remove("hidden");
     rightQuiz.classList.remove("hidden");
@@ -155,11 +162,24 @@ const quizTracker = {
     addSubmitButtonListener();
   },
 
+  clearQuizInfo: function () {
+    leftQuiz.classList.add("hidden");
+    rightQuiz.classList.add("hidden");
+  },
+
+  showScoreScreen: function () {
+    //
+  },
+
   populateQuestion: function () {
     quizQuestion.textContent =
       jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
         this.currentQuestion
       ].question;
+
+    quizQuestionNumber.textContent = `Question ${
+      this.currentQuestion + 1
+    } of 10`;
   },
 
   populateOptions: function () {
@@ -193,6 +213,7 @@ const quizTracker = {
 
   //WE STOPPED HERE!
   nextQuestion: function () {
+    this.currentQuestion > 9 ? "do this" : "do that";
     this.currentQuestion += 1;
     this.populateQuestion();
     this.populateOptions();
