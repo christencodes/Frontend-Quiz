@@ -112,7 +112,7 @@ ol li {
 .text-preset-3 {
   font-family: var(--rubik);
   font-weight: medium;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 .text-preset-3-mobile {
@@ -163,54 +163,49 @@ ol li {
 body {
   display: grid;
   place-content: center;
-  grid-template-columns: repeat(1, min(1000px, 80%));
+  grid-template-columns: repeat(1, min(1200px, 80%));
   grid-template-rows: repeat(1, 600px);
 }
 .card-container {
-  min-width: 90%;
-  padding: 5rem;
-  display: flex;
+  min-width: 100%;
+  height: 800px;
+  padding: 4rem;
+  /* display: flex; */
 
   /* ----- */
-  background-color: var(--blue900);
-  color: white;
-
-  background-image: url(/assets/images/pattern-background-desktop-dark.svg);
-  /* background-position: center; */
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 
 .card {
   min-width: 100%;
   display: flex;
-  justify-content: center;
-  align-content: center;
+  /* justify-content: center;
+  align-content: center; */
+  justify-content: end;
 }
 
 .card > * {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 50%;
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 .left-card,
 .right-card {
-  padding: 3rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-content: center;
-  justify-content: start;
-  border: 1px solid red;
+  justify-content: center;
+  /* border: 1px solid red; */
 }
 
 .left-card {
+  justify-content: center;
 }
 
 .left-quiz {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 .left-card small {
@@ -230,6 +225,7 @@ body {
 .right-quiz ul {
   display: flex;
   flex-direction: column;
+
   gap: 0.9rem;
 }
 
@@ -249,12 +245,16 @@ body {
 }
 
 .right-quiz li {
-  padding: 1rem;
+  /* border: 1px solid red; */
 }
 
 .right-card li:hover {
   cursor: pointer;
   outline: 3px solid var(--purple600);
+}
+
+.right-card li:active {
+  outline: 1px solid green;
 }
 
 .right-card img {
@@ -264,28 +264,19 @@ body {
   padding: 0.1rem;
 }
 
-.A,
-.B,
-.C,
-.D {
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  color: var(--blue950);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-}
-
 .submit {
   margin-top: 10px;
-  height: 60px;
+  height: 80px;
   background-color: var(--purple600);
-  color: white;
   border-radius: 24px;
   outline: none;
   border: none;
+  color: white;
+}
+
+.submit:hover {
+  outline: 3px solid white;
+  transition: outline 0.2s ease-in;
 }
 
 #html img {
@@ -304,8 +295,75 @@ body {
   background-color: var(--purple100);
 }
 
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --------------Quiz related */
+
 /* Utility */
 
 .hidden {
   display: none;
+}
+
+.user-options {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+}
+
+/*Theme Modes  */
+.dark-mode-container {
+  background-color: var(--blue900);
+  color: white;
+  background-image: url(/assets/images/pattern-background-desktop-dark.svg);
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.light-mode-selections li {
+  background-color: white;
+  color: var(--blue900);
+}
+
+.light-mode-container {
+  background-color: var(--white);
+  color: var(--blue900);
+  background-image: url(/assets/images/pattern-background-desktop-light.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.question-letter {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue900);
+  height: 50px;
+  min-width: 50px;
+  background-color: var(--white);
+  color: var(--grey500);
+}
+
+/* This is for the clicked function in JS */
+.clicked {
+  outline: 3px solid white;
+}
+
+.A,
+.B,
+.C,
+.D {
+  pointer-events: none;
 }

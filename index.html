@@ -19,13 +19,26 @@
     <title>Frontend Quiz</title>
   </head>
   <body>
-    <div class="card-container">
+    <div class="card-container dark-mode-container">
+      <div class="user-options">
+        <div id="current-quiz-category">
+          <img src="/assets/images/favicon-32x32.png" alt="" />
+          <p>Javascript</p>
+        </div>
+        <div class="dark-mode-toggle">
+          <img id="sun" src="/assets/images/icon-sun-light.svg" alt="" />
+
+          <img id="moon" src="/assets/images/icon-moon-light.svg" alt="" />
+        </div>
+      </div>
       <div class="card">
         <div class="left-card">
           <div class="left-quiz hidden">
             <div class="quiz-section">
-              <small id="quiz-question-number">Question 0 of 0</small>
-              <p id="quiz-question">
+              <small id="quiz-question-number" class="text-preset-6"
+                >Question 0 of 0</small
+              >
+              <p id="quiz-question" class="text-preset-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
                 neque quasi velit. Autem non, tenetur harum, cupiditate dicta,
                 numquam accusamus cum sit facilis totam voluptates veritatis
@@ -48,12 +61,28 @@
 
         <div class="right-card">
           <div class="right-quiz hidden">
-            <ul id="questions">
-              <li id="0"><div class="A"></div></li>
-              <li id="1"><div class="B"></div></li>
-              <li id="2"><div class="C"></div></li>
-              <li id="3"><div class="D"></div></li>
-              <button class="submit">submit</button>
+            <ul id="questions" class="">
+              <li id="0">
+                <div class="question-letter text-preset-4">A</div>
+                <div class="A text-preset-4"></div>
+                <div class="right-or-wrong"></div>
+              </li>
+              <li id="1">
+                <div class="question-letter text-preset-4">B</div>
+                <div class="B text-preset-4"></div>
+                <div class="right-or-wrong"></div>
+              </li>
+              <li id="2">
+                <div class="question-letter text-preset-4">C</div>
+                <div class="C text-preset-4"></div>
+                <div class="right-or-wrong"></div>
+              </li>
+              <li id="3">
+                <div class="question-letter text-preset-4">D</div>
+                <div class="D text-preset-4"></div>
+                <div class="right-or-wrong"></div>
+              </li>
+              <button class="submit text-preset-4">Submit Answer</button>
             </ul>
             <!-- <button id="submit">Submit</button> -->
           </div>

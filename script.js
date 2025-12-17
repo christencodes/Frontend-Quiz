@@ -28,12 +28,19 @@ const quizQuestionNumber = document.getElementById("quiz-question-number");
 
 //A B C D...0, 1 , 2 , 3
 
-const question0 = document.getElementById("0");
-const question1 = document.getElementById("1");
-const question2 = document.getElementById("2");
-const question3 = document.getElementById("3");
+const question0 = document.getElementById("0").querySelector(".A");
+const question1 = document.getElementById("1").querySelector(".B");
+const question2 = document.getElementById("2").querySelector(".C");
+const question3 = document.getElementById("3").querySelector(".D");
 
 const questionsArray = [question0, question1, question2, question3];
+
+const questionsParents = [
+  question0.parentNode,
+  question1.parentNode,
+  question2.parentNode,
+  question3.parentNode,
+];
 
 // EVENT LISTENERS FOR CLICKING BUTTONS
 // For selecting which quiz
@@ -53,8 +60,23 @@ rightCard.addEventListener("click", (e) => {
 rightQuiz.addEventListener("click", (e) => {
   e.preventDefault();
   quizTracker.currentUserAnswer = e.target.textContent;
+  e.target.classList.add("clicked");
+  clickAndUnclick(e);
+  console.log(e.target);
   console.log(e.target.textContent);
 });
+
+function clickAndUnclick(e) {
+  // e.target.classList.toggle("clicked");
+  questionsParents.forEach((element) => {
+    if (element != e.target) {
+      element.classList.remove("clicked");
+    }
+  });
+}
+
+//^^^
+// Need a function to keep buttons active after clicking - lets try the toggle event listener
 
 // FUNCTIONS
 //Submit button Function
@@ -217,5 +239,22 @@ const quizTracker = {
     this.currentQuestion += 1;
     this.populateQuestion();
     this.populateOptions();
+  },
+};
+
+// DARK MODE TOGGLE STUFF
+const sun = document.getElementById("sun");
+const moon = document.getElementById("moon");
+
+const colorTheme = {
+  //starting theme will be dark
+  darkMode: function () {
+    //change the background
+    //change the colors
+  },
+
+  lightMode: function () {
+    //change the background
+    //change the colors
   },
 };
