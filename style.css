@@ -168,7 +168,7 @@ body {
 }
 .card-container {
   min-width: 100%;
-  height: 800px;
+  height: 650px;
   padding: 4rem;
   /* display: flex; */
 
@@ -201,7 +201,7 @@ body {
 }
 
 .left-card {
-  justify-content: center;
+  justify-content: start;
 }
 
 .left-quiz {
@@ -279,20 +279,24 @@ body {
   transition: outline 0.2s ease-in;
 }
 
-#html img {
+.html img {
   background-color: var(--orange50);
+  border-radius: 8px;
 }
 
-#css img {
+.css img {
   background-color: var(--green100);
+  border-radius: 8px;
 }
 
-#js img {
+.js img {
   background-color: var(--blue50);
+  border-radius: 8px;
 }
 
-#accessibility img {
+.accessibility img {
   background-color: var(--purple100);
+  border-radius: 8px;
 }
 
 .quiz-section {
@@ -310,7 +314,7 @@ body {
 }
 
 .user-options {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -319,6 +323,7 @@ body {
 }
 
 /*Theme Modes  */
+
 .dark-mode-container {
   background-color: var(--blue900);
   color: white;
@@ -366,4 +371,60 @@ body {
 .C,
 .D {
   pointer-events: none;
+}
+
+#current-quiz-category {
+  display: flex;
+  flex-direction: row;
+  /* border: 1px solid red; */
+  justify-content: center;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.category-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  /* background-color: black; */
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#toggle {
+  width: 50px;
+  height: 30px;
+  background-color: var(--purple600);
+  border-radius: 24px;
+  position: relative;
+}
+
+.toggle-ball {
+  position: absolute;
+  background-color: var(--white);
+  border: 1px solid white;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+}
+
+/* when the ball is clicked I want it to move to the left or right depending on the theme state */
+
+.toggle-ball-dark {
+  left: 50%;
+  top: 16%;
+  transition: left 0.1s ease-in-out;
+}
+
+.toggle-ball-light {
+  left: 10% !important;
+  top: 16% !important;
+  transition: left 0.2s ease-in-out;
 }

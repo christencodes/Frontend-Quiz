@@ -22,11 +22,22 @@
     <div class="card-container dark-mode-container">
       <div class="user-options">
         <div id="current-quiz-category">
-          <img src="/assets/images/favicon-32x32.png" alt="" />
-          <p>Javascript</p>
+          <div class="category-img-container">
+            <img
+              id="category-img"
+              src="/assets/images/favicon-32x32.png"
+              alt=""
+            />
+          </div>
+
+          <p class="category-name text-preset-4">Javascript</p>
         </div>
-        <div class="dark-mode-toggle">
+        <div class="theme-toggle">
           <img id="sun" src="/assets/images/icon-sun-light.svg" alt="" />
+          <div id="toggle">
+            <!-- This is the toggler -->
+            <div id="ball" class="toggle-ball toggle-ball-dark"></div>
+          </div>
 
           <img id="moon" src="/assets/images/icon-moon-light.svg" alt="" />
         </div>
@@ -88,19 +99,19 @@
           </div>
           <div class="right-info">
             <ul>
-              <li class="text-preset-4" id="html">
+              <li class="text-preset-4 html" id="html">
                 <img src="/assets/images/icon-html.svg" alt="" />
                 <p>HTML</p>
               </li>
-              <li class="text-preset-4" id="css">
+              <li class="text-preset-4 css" id="css">
                 <img src="/assets/images/icon-css.svg" alt="" />
                 <p>CSS</p>
               </li>
-              <li class="text-preset-4" id="js">
+              <li class="text-preset-4 js" id="js">
                 <img src="/assets/images/icon-js.svg" alt="" />
                 <p>Javascript</p>
               </li>
-              <li class="text-preset-4" id="accessibility">
+              <li class="text-preset-4 accessibility" id="accessibility">
                 <img src="/assets/images/icon-accessibility.svg" alt="" />
                 <p>Accessibility</p>
               </li>

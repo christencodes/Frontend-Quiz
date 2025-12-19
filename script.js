@@ -1,14 +1,5 @@
 "use strict";
-/* 
-1. Create Main Screen
-a. Create 4 buttons - HTML; CSS; JS: Accessibility
-b.dark mode toggle
-c.get dark mode toggle out of the way
-2. Access JSON File
-a. review how to access JSOn file
 
-question: make it state based?
-*/
 let jsonContainer;
 // SELECTORS
 const leftCard = document.querySelector(".left-card");
@@ -51,6 +42,7 @@ rightCard.addEventListener("click", (e) => {
     categoryState.state(e.target.id);
     quizTracker.clearMain();
     quizTracker.showQuizInfo();
+    updateCategoryImg(categoryState.currentActiveState());
   }
 
   //? change the current state to
@@ -242,9 +234,62 @@ const quizTracker = {
   },
 };
 
+//Category Information
+const categoryImgContainer = document.querySelector(".category-img-container");
+const categoryImg = document.getElementById("category-img");
+const categoryName = document.querySelector(".category-name");
+//img urls
+categoryName.textContent = "";
+const htmlIcon = "assets/images/icon-html.svg";
+const cssIcon = "assets/images/icon-css.svg";
+const jsIcon = "assets/images/icon-js.svg";
+const accessibilityIcon = "assets/images/icon-accessibility.svg";
+
+function updateCategoryImg(state) {
+  switch (categoryState.currentActiveState()) {
+    case "html":
+      categoryImg.src = htmlIcon;
+      categoryImgContainer.classList.add("html");
+      categoryName.textContent = "HTML";
+      break;
+    case "css":
+      categoryImg.src = cssIcon;
+      categoryImgContainer.classList.add("css");
+      categoryName.textContent = "CSS";
+      break;
+    case "js":
+      categoryImg.src = jsIcon;
+      categoryImgContainer.classList.add("js");
+      categoryName.textContent = "Javascript";
+      break;
+    case "accessibility":
+      categoryImg.src = accessibilityIcon;
+      categoryImgContainer.classList.add("accessibility");
+      categoryName.textContent = "Accessibility";
+      break;
+    default:
+      categoryImg.src = "assets/images/favicon-32x32.png";
+      categoryName.textContent = "";
+      break;
+  }
+}
+
 // DARK MODE TOGGLE STUFF
 const sun = document.getElementById("sun");
 const moon = document.getElementById("moon");
+
+const darkSun = "assets/images/icon-sun-dark.svg";
+const darkMoon = "assets/images/icon-moon-dark.svg";
+const lightSun = "assets/images/icon-sun-light.svg";
+const lightMoon = "assets/images/icon-moon-light.svg";
+const toggle = document.getElementById("toggle");
+const ball = document.getElementById("ball");
+
+ball.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.target.classList.toggle("toggle-ball-dark");
+  e.target.classList.toggle("toggle-ball-light");
+});
 
 const colorTheme = {
   //starting theme will be dark
