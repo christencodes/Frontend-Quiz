@@ -12,6 +12,7 @@ const leftQuiz = leftCard.querySelector(".left-quiz");
 const rightQuiz = rightCard.querySelector(".right-quiz");
 
 const quizQuestion = document.getElementById("quiz-question");
+const scoreMessage = document.querySelector(".score-message");
 
 const submitButton = document.querySelector(".submit");
 
@@ -25,6 +26,17 @@ const question2 = document.getElementById("2").querySelector(".C");
 const question3 = document.getElementById("3").querySelector(".D");
 
 const questionsArray = [question0, question1, question2, question3];
+
+//Main screen li
+
+const html = document.getElementById("html");
+const css = document.getElementById("css");
+const js = document.getElementById("js");
+const accessibility = document.getElementById("accessibility");
+
+const mainSelectionsArray = [html, css, js, accessibility];
+
+// ------------------------------------------------------
 
 const questionsParents = [
   question0.parentNode,
@@ -182,7 +194,11 @@ const quizTracker = {
   },
 
   showScoreScreen: function () {
-    //
+    //this function will show the score screen
+    //score screen needs to have....we can show main and then edit main
+    //after we show main we need to edit left and right info
+    this.clearQuizInfo();
+    scoreMessage.classList.toggle("hidden");
   },
 
   populateQuestion: function () {
@@ -211,6 +227,7 @@ const quizTracker = {
     });
   },
 
+  //check answer is called on submit click -> goes to next question
   checkAnswer: function () {
     this.increaseOrDecreaseScore(
       this.currentUserAnswer.trim() == this.currentQuestionAnswer()
@@ -227,10 +244,14 @@ const quizTracker = {
 
   //WE STOPPED HERE!
   nextQuestion: function () {
-    this.currentQuestion > 9 ? "do this" : "do that";
-    this.currentQuestion += 1;
-    this.populateQuestion();
-    this.populateOptions();
+    //we're here
+    if (this.question > 9) {
+      this.showScoreScreen();
+    } else {
+      this.currentQuestion += 1;
+      this.populateQuestion();
+      this.populateOptions();
+    }
   },
 };
 
@@ -275,6 +296,11 @@ function updateCategoryImg(state) {
 }
 
 // DARK MODE TOGGLE STUFF
+
+const cardContainer = document.querySelector(".card-container");
+const rightInfoList = document.getElementById("right-info-list");
+const questions = document.getElementById("questions");
+
 const sun = document.getElementById("sun");
 const moon = document.getElementById("moon");
 
@@ -289,17 +315,35 @@ ball.addEventListener("click", (e) => {
   e.preventDefault();
   e.target.classList.toggle("toggle-ball-dark");
   e.target.classList.toggle("toggle-ball-light");
+
+  if (e.target.classList.contains("toggle-ball-light")) {
+    colorTheme.lightMode();
+  } else {
+    colorTheme.darkMode();
+  }
 });
 
 const colorTheme = {
   //starting theme will be dark
   darkMode: function () {
-    //change the background
-    //change the colors
+    console.log("We're in dark mode");
+    cardContainer.classList.toggle("light-mode-container");
+    cardContainer.classList.toggle("dark-mode-container");
+    sun.src = lightSun;
+    moon.src = lightMoon;
+
+    rightInfoList.classList.toggle("light-mode-list");
+    questions.classList.toggle("light-mode-questions");
   },
 
   lightMode: function () {
-    //change the background
-    //change the colors
+    console.log("We're in light mode");
+    cardContainer.classList.toggle("light-mode-container");
+    cardContainer.classList.toggle("dark-mode-container");
+    sun.src = darkSun;
+    moon.src = darkMoon;
+
+    rightInfoList.classList.toggle("light-mode-list");
+    questions.classList.toggle("light-mode-questions");
   },
 };
