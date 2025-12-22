@@ -5,7 +5,7 @@ let jsonContainer;
 const leftCard = document.querySelector(".left-card");
 const rightCard = document.querySelector(".right-card");
 
-const leftInfo = leftCard.querySelector(".left-info");
+const leftInfo = document.getElementById("left-info");
 const rightInfo = rightCard.querySelector(".right-info");
 
 const leftQuiz = leftCard.querySelector(".left-quiz");
@@ -13,6 +13,8 @@ const rightQuiz = rightCard.querySelector(".right-quiz");
 
 const quizQuestion = document.getElementById("quiz-question");
 const scoreMessage = document.querySelector(".score-message");
+
+const scoreResults = document.querySelector(".score-results");
 
 const submitButton = document.querySelector(".submit");
 
@@ -37,6 +39,8 @@ const accessibility = document.getElementById("accessibility");
 const mainSelectionsArray = [html, css, js, accessibility];
 
 // ------------------------------------------------------
+
+// --------------------------------------------------------
 
 const questionsParents = [
   question0.parentNode,
@@ -162,6 +166,7 @@ const quizTracker = {
   currentQuestion: 0,
   currentOptions: [],
   // THIS IS WHERE WE LEFT OFF!
+  // This path is wrong and needs to be fixed
   currentQuestionAnswer: function () {
     return jsonContainer.quizzes[categoryState.returnStateIndex()].questions[
       this.currentQuestion
@@ -171,7 +176,9 @@ const quizTracker = {
   currentUserAnswer: 0,
 
   clearMain: function () {
+    console.log("Main Cleared");
     leftInfo.classList.add("hidden");
+
     rightInfo.classList.add("hidden");
   },
 
@@ -197,8 +204,10 @@ const quizTracker = {
     //this function will show the score screen
     //score screen needs to have....we can show main and then edit main
     //after we show main we need to edit left and right info
+    console.log("showing score screen");
     this.clearQuizInfo();
     scoreMessage.classList.toggle("hidden");
+    scoreResults.classList.toggle("hidden");
   },
 
   populateQuestion: function () {
@@ -257,7 +266,7 @@ const quizTracker = {
 
 //Category Information
 const categoryImgContainer = document.querySelector(".category-img-container");
-const categoryImg = document.getElementById("category-img");
+const categoryImg = document.querySelector(".category-img");
 const categoryName = document.querySelector(".category-name");
 //img urls
 categoryName.textContent = "";

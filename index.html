@@ -24,7 +24,7 @@
         <div id="current-quiz-category">
           <div class="category-img-container">
             <img
-              id="category-img"
+              class="category-img"
               src="/assets/images/favicon-32x32.png"
               alt=""
             />
@@ -44,11 +44,11 @@
       </div>
       <div class="card">
         <div class="left-card">
-          <div class="score-message">
+          <div class="score-message hidden">
             <div class="left-info">
               <div id="main-state">
                 <p class="text-preset-2-light" id="main-heading">
-                  Quiz Completed
+                  Quiz Completed <br />
                   <span id="text-preset-2-medium">You scored...</span>
                 </p>
               </div>
@@ -67,10 +67,10 @@
               </p>
             </div>
           </div>
-          <div class="left-info hidden">
+          <div id="left-info">
             <div id="main-state">
               <p class="text-preset-2-light" id="main-heading">
-                Welcome to the
+                Welcome to the <br />
                 <span id="text-preset-2-medium">Frontend Quiz!</span>
               </p>
               <small class="text-preset-6" id="main-small"
@@ -81,6 +81,21 @@
         </div>
 
         <div class="right-card">
+          <div class="score-results hidden">
+            <div class="score-results-container">
+              <div class="category-img-container">
+                <img
+                  class="category-img"
+                  src="/assets/images/favicon-32x32.png"
+                  alt=""
+                />
+                <p class="category-name text-preset-4">Javascript</p>
+              </div>
+              <div id="score" class="text-preset-1">0</div>
+              <p class="text-preset-5-regular">out of 10</p>
+            </div>
+            <button class="play-again text-preset-4">Play Again</button>
+          </div>
           <div class="right-quiz hidden">
             <ul id="questions" class="">
               <li id="0">
